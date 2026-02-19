@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi du Colis - Judi Transport</title>
+    <link rel="stylesheet" href="suivi-colis.css">
+</head>
+<body>
+    <div class="tracking-container">
+        <h1 class="page-title">SUIVIS DU COLIS</h1>
+        
+        <div class="search-section">
+            <label for="tracking-number" class="search-label">Entrez votre numéro de colis</label>
+            <input type="text" id="tracking-number" class="tracking-input" placeholder="Ex: COL001">
+            <button class="btn-rechercher" onclick="searchPackage()">RECHERCHER</button>
+        </div>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <div class="info-card">
+                <h2 class="card-title">INFORMATIONS DU COLIS</h2>
+                
+                <div class="info-row">
+                    <span class="info-label">Numéro :</span>
+                    <span class="info-value" id="colisNumero">COL001</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">Expéditeur :</span>
+                    <span class="info-value" id="colisExpediteur">ALI</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">Destinataire :</span>
+                    <span class="info-value" id="colisDestinataire">Paul</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">Ville départ :</span>
+                    <span class="info-value" id="colisVilleDepart">Ouagadougou</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">Ville Destination :</span>
+                    <span class="info-value" id="colisVilleDestination">Bobo dioulasso</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">Statut :</span>
+                    <span class="info-value status" id="colisStatut">En cours de transport</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">Date :</span>
+                    <span class="info-value" id="colisDate">16/02/2026</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for demonstration
+        const packagesData = {
+            'COL001': {
+                numero: 'COL001',
+                expediteur: 'ALI',
+                destinataire: 'Paul',
+                villeDepart: 'Ouagadougou',
+                villeDestination: 'Bobo dioulasso',
+                statut: 'En cours de transport',
+                date: '16/02/2026'
+            },
+            'COL002': {
+                numero: 'COL002',
+                expediteur: 'Issa',
+                destinataire: 'Jean',
+                villeDepart: 'Bobo',
+                villeDestination: 'Ouaga',
+                statut: 'Livré',
+                date: '15/02/2026'
+            }
+        };
+
+        function searchPackage() {
+            const input = document.getElementById('tracking-number').value.trim();
+            const resultSection = document.getElementById('resultSection');
+            
+            if (packagesData[input]) {
+                const data = packagesData[input];
+                document.getElementById('colisNumero').textContent = data.numero;
+                document.getElementById('colisExpediteur').textContent = data.expediteur;
+                document.getElementById('colisDestinataire').textContent = data.destinataire;
+                document.getElementById('colisVilleDepart').textContent = data.villeDepart;
+                document.getElementById('colisVilleDestination').textContent = data.villeDestination;
+                document.getElementById('colisStatut').textContent = data.statut;
+                document.getElementById('colisDate').textContent = data.date;
+                resultSection.style.display = 'block';
+            } else {
+                alert('Colis non trouvé. Veuillez vérifier le numéro.');
+                resultSection.style.display = 'none';
+            }
+        }
+
+        // Allow search on Enter key
+        document.getElementById('tracking-number').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchPackage();
+            }
+        });
+    </script>
+</body>
+</html>

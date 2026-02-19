@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Colis - Judi Transport</title>
+    <link rel="stylesheet" href="ajouter-colis.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>JUDI<br>TRANSPORT</h2>
+            </div>
+            <nav class="menu">
+                <a href="liste-colis.html" class="menu-item">Liste Colis</a>
+                <a href="suivi-colis.html" class="menu-item">Suivi colis</a>
+                <a href="login.html" class="menu-item">Déconnexion</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="form-container">
+                <h1 class="form-title">AJOUTER UN COLIS</h1>
+                
+                <form class="package-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="numero-colis">Numéro de Colis</label>
+                        <input type="text" id="numero-colis" name="numero_colis" placeholder="[COL1231]" value="COL1231">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expediteur">Nom Expéditeur</label>
+                        <input type="text" id="expediteur" name="expediteur" placeholder="[..........................]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destinataire">Nom Destinataire</label>
+                        <input type="text" id="destinataire" name="destinataire" placeholder="[..........................]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="[..........................]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ville-depart">Ville Départ</label>
+                        <input type="text" id="ville-depart" name="ville_depart" placeholder="[..........................]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ville-destination">Ville Destination.</label>
+                        <input type="text" id="ville-destination" name="ville_destination" placeholder="[..........................]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="statut">Statut</label>
+                        <input type="text" id="statut" name="statut" value="[Enregistré]" readonly>
+                    </div>
+
+                    <button type="submit" class="btn-enregistrer">ENREGISTRER</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

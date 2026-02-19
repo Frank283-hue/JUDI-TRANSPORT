@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Colis - Judi Transport</title>
+    <link rel="stylesheet" href="liste-colis.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>JUDI<br>TRANSPORT</h2>
+            </div>
+            <nav class="menu">
+                <a href="liste-colis.html" class="menu-item active">Liste colis</a>
+                <a href="suivi-colis.html" class="menu-item">Suivis colis</a>
+                <a href="login.html" class="menu-item">Déconnexion</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="page-title">LISTE DES COLIS</h1>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Rechercher un colis" id="searchInput">
+            </div>
+
+            <div class="table-container">
+                <table class="packages-table">
+                    <thead>
+                        <tr>
+                            <th>Numéro</th>
+                            <th>Expéditeur</th>
+                            <th>Destinataire</th>
+                            <th>Ville</th>
+                            <th>Statut</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>COL001</td>
+                            <td>Ali</td>
+                            <td>Paul</td>
+                            <td>Bobo</td>
+                            <td><span class="status delivered">Livré</span></td>
+                            <td class="actions">
+                                <button class="btn-modifier">Modifier</button>
+                                <button class="btn-supprimer">Supprimer</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>COL002</td>
+                            <td>Issa</td>
+                            <td>Jean</td>
+                            <td>Ouaga</td>
+                            <td><span class="status in-progress">En Cours</span></td>
+                            <td class="actions">
+                                <button class="btn-modifier">Modifier</button>
+                                <button class="btn-supprimer">Supprimer</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simple search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('.packages-table tbody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
