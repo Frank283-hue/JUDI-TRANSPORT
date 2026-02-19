@@ -1,0 +1,116 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    width: 240px;
+    height: 100%;
+    background: #1e293b;
+    color: white;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #334155;
+}
+
+/* Main */
+.main-content {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 220px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.blue { background: #3b82f6; }
+.green { background: #22c55e; }
+.orange { background: #f59e0b; }
+.red { background: #ef4444; }
+
+/* Form */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #3b82f6;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+/* Table */
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+}
+
+th {
+    background: #3b82f6;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
